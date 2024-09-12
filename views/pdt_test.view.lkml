@@ -3,17 +3,19 @@
 
 view: pdt_test {
   derived_table: {
-    explore_source: order_items {
-      column: id {}
-      column: sale_price {}
-    }
+    sql: SELECT
+      id  AS `order_items.id`,
+      order_items.sale_price  AS `order_items.sale_price`
+    FROM demo_db.order_items  AS order_items
+    LIMIT 20 ;;
   }
   dimension: id {
-    description: ""
     type: number
+    primary_key: yes
+    sql:${TABLE}.order_items ;;
   }
   dimension: sale_price {
-    description: ""
     type: number
+    sql:${TABLE}.order_items ;;
   }
 }
