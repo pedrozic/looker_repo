@@ -4,7 +4,7 @@ connection: "thelook"
 include: "/views/**/*.view.lkml"
 
 datagroup: ecommerce_sluispedro_default_datagroup {
-  # sql_trigger: SELECT MAX(id) FROM etl_log;;
+  # sql_trigger: SELECT MAX(id) FROM etl_log;; jk
   max_cache_age: "1 hour"
 }
 
