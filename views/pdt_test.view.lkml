@@ -5,10 +5,11 @@ view: pdt_test {
   derived_table: {
     sql: SELECT
       id  AS `order_items.id`,
-      order_items.sale_price  AS `order_items.sale_price`
-    FROM demo_db.order_items  AS order_items
+      sale_price  AS `order_items.sale_price`
+    FROM order_items  AS order_items
     LIMIT 20 ;;
   }
+
   dimension: id {
     type: number
     primary_key: yes
