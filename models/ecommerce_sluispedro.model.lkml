@@ -1,6 +1,6 @@
 connection: "thelook"
 
-# include all the views
+# include all the views wer
 include: "/views/**/*.view.lkml"
 include: "/Dashboards/*.dashboard.lookml"
 
