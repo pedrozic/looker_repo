@@ -35,6 +35,23 @@ view: products {
     type: string
     sql: ${TABLE}.sku ;;
   }
+
+  measure: product_count {
+    type: count_distinct
+    sql: ${TABLE}.item_name ;;
+    link: {
+      label: "label sample"
+      url: "
+      {% if value == 1522 %}
+      /dashboards/71
+      {% elsif value == 1496  %}
+      /dashboards/63
+      {% else  %}
+      /dashboards/79
+      {% endif %}"
+    }
+  }
+
   measure: count {
     type: count
     drill_fields: [id, item_name, inventory_items.count]
