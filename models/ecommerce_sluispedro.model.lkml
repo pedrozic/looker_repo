@@ -2,11 +2,13 @@ connection: "thelook"
 
 # include all the views
 include: "/views/**/*.view.lkml"
+include: "/views/test_liquid.view.lkml"
 
 datagroup: ecommerce_sluispedro_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;; jk
   max_cache_age: "1 hour"
 }
+explore: liquid_test {}
 
 persist_with: ecommerce_sluispedro_default_datagroup
 

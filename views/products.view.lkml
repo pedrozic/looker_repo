@@ -23,6 +23,16 @@ view: products {
     type: string
     sql: ${TABLE}.item_name ;;
   }
+  measure: test_liquid {
+    type: number
+    sql: ${rank} ;;
+    html: {% if value < 4000 and count._value > 0 %}
+        <p style="color: red; background-color: lightgreen; font-size:100%; text-align:center">{{ rendered_value }}</p>
+        {% else %}
+        <p style="color: blue; background-color: lightblue; font-size:100%; text-align:center">{{ rendered_value }}</p>
+        {% endif %};;
+
+  }
   dimension: rank {
     type: number
     sql: ${TABLE}.rank ;;
@@ -35,6 +45,7 @@ view: products {
     type: string
     sql: ${TABLE}.sku ;;
   }
+
   measure: count {
     type: count
     drill_fields: [id, item_name, inventory_items.count]
